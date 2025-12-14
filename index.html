@@ -94,3 +94,517 @@
     <script src="script.js"></script>
 </body>
 </html>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', 'メイリオ', Meiryo, 'MS Pゴシック', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image: 
+        radial-gradient(2px 2px at 20px 30px, white, transparent),
+        radial-gradient(2px 2px at 60px 70px, white, transparent),
+        radial-gradient(1px 1px at 50px 50px, white, transparent),
+        radial-gradient(1px 1px at 130px 80px, white, transparent),
+        radial-gradient(2px 2px at 90px 10px, white, transparent);
+    background-size: 200px 200px;
+    animation: twinkle 3s ease-in-out infinite;
+    opacity: 0.6;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 0.3; }
+}
+
+.container {
+    max-width: 600px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+    animation: fadeInDown 0.8s ease-out;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.title {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.title-icon {
+    font-size: 2rem;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+.subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+}
+
+.card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.input-card {
+    margin-bottom: 20px;
+}
+
+.card-title {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-label {
+    color: #555;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.form-input {
+    padding: 12px 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.submit-btn {
+    margin-top: 10px;
+    padding: 16px 32px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+.btn-icon {
+    font-size: 1.2rem;
+    animation: sparkle 1.5s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+    0%, 100% { transform: rotate(0deg) scale(1); }
+    25% { transform: rotate(-15deg) scale(1.2); }
+    75% { transform: rotate(15deg) scale(1.2); }
+}
+
+.result-container {
+    animation: fadeInScale 0.5s ease-out;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.result-card {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.result-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.animal-emoji {
+    font-size: 5rem;
+    margin-bottom: 15px;
+    animation: bounceIn 0.8s ease-out;
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.result-title {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.result-subtitle {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.divider {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #667eea, transparent);
+    margin: 25px 0;
+}
+
+.result-content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.info-section {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    color: #333;
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-icon {
+    font-size: 1.3rem;
+}
+
+.info-text {
+    color: #555;
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+.reset-btn {
+    margin-top: 30px;
+    padding: 14px 28px;
+    background: white;
+    color: #667eea;
+    border: 2px solid #667eea;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.reset-btn:hover {
+    background: #667eea;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.reset-btn:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+    }
+    
+    .card {
+        padding: 25px;
+    }
+    
+    .animal-emoji {
+        font-size: 4rem;
+    }
+    
+    .result-title {
+        font-size: 1.6rem;
+    }
+}
+// 動物占いデータ
+const animals = [
+    {
+        name: "チータ",
+        emoji: "🐆",
+        type: "全力疾走タイプ",
+        personality: "行動力があり、目標に向かって一直線に進む性格です。瞬発力に優れ、チャンスを逃しません。",
+        characteristics: "好奇心旺盛で、新しいことに挑戦するのが大好き。ただし、飽きっぽい一面も。エネルギッシュで周囲を引っ張るリーダー気質があります。",
+        compatibility: "ゾウ、ライオン",
+        advice: "時には立ち止まって周りを見渡すことも大切です。一つのことをじっくり深めることで、さらなる成長が期待できます。"
+    },
+    {
+        name: "ライオン",
+        emoji: "🦁",
+        type: "百獣の王タイプ",
+        personality: "堂々としていて、リーダーシップに優れています。プライドが高く、自分の信念を貫く強さがあります。",
+        characteristics: "責任感が強く、周囲から頼られる存在。正義感が強く、曲がったことが嫌い。ただし、頑固な面もあります。",
+        compatibility: "チータ、ペガサス",
+        advice: "時には柔軟性を持つことも重要です。他者の意見に耳を傾けることで、より良いリーダーになれるでしょう。"
+    },
+    {
+        name: "ゾウ",
+        emoji: "🐘",
+        type: "どっしり安定タイプ",
+        personality: "穏やかで優しく、周囲に安心感を与える存在です。じっくり物事を考え、慎重に行動します。",
+        characteristics: "忍耐強く、コツコツと努力を重ねることができます。記憶力が良く、一度学んだことは忘れません。家族や仲間を大切にします。",
+        compatibility: "チータ、こじか",
+        advice: "時には大胆な決断も必要です。慎重すぎるとチャンスを逃すこともあるので、勇気を持って一歩踏み出しましょう。"
+    },
+    {
+        name: "猿",
+        emoji: "🐵",
+        type: "好奇心旺盛タイプ",
+        personality: "明るく社交的で、場を盛り上げるのが得意です。頭の回転が速く、機転が利きます。",
+        characteristics: "適応力が高く、どんな環境でもすぐに馴染めます。器用で多才ですが、気が散りやすい面も。ユーモアのセンスがあります。",
+        compatibility: "ペガサス、狼",
+        advice: "一つのことに集中する時間を作りましょう。浅く広くではなく、深く掘り下げることで専門性が高まります。"
+    },
+    {
+        name: "ペガサス",
+        emoji: "🦄",
+        type: "自由奔放タイプ",
+        personality: "自由を愛し、束縛を嫌います。独創的で、常識にとらわれない発想ができます。",
+        characteristics: "芸術的センスがあり、クリエイティブな仕事に向いています。マイペースで、自分の世界を大切にします。直感力に優れています。",
+        compatibility: "ライオン、猿",
+        advice: "周囲との協調性も意識しましょう。自由と責任はセットです。時には他者に合わせることも成長につながります。"
+    },
+    {
+        name: "狼",
+        emoji: "🐺",
+        type: "一匹狼タイプ",
+        personality: "独立心が強く、自分の道を切り開きます。クールで冷静、状況判断に優れています。",
+        characteristics: "洞察力があり、本質を見抜く力があります。一人の時間を大切にし、深く物事を考えます。信頼できる仲間を大切にします。",
+        compatibility: "猿、こじか",
+        advice: "時には心を開いて人と関わることも大切です。孤独になりすぎず、信頼できる仲間との絆を深めましょう。"
+    },
+    {
+        name: "こじか",
+        emoji: "🦌",
+        type: "優しい癒し系タイプ",
+        personality: "繊細で優しく、人の気持ちに敏感です。平和を愛し、争いを好みません。",
+        characteristics: "思いやりがあり、人を癒す力があります。美的センスに優れ、芸術や自然を愛します。傷つきやすい面もあります。",
+        compatibility: "ゾウ、狼",
+        advice: "もっと自分に自信を持ちましょう。優しさは強さです。時には自分の意見をはっきり伝える勇気も必要です。"
+    },
+    {
+        name: "虎",
+        emoji: "🐯",
+        type: "情熱的チャレンジャータイプ",
+        personality: "情熱的で行動力があり、困難に立ち向かう勇気があります。正義感が強く、弱い者を守ります。",
+        characteristics: "エネルギッシュで、常に前進し続けます。直感を信じて行動し、リスクを恐れません。仲間思いで義理堅い性格です。",
+        compatibility: "チータ、猿",
+        advice: "時には冷静に状況を分析することも大切です。勢いだけでなく、計画性を持つことでさらに成功率が高まります。"
+    },
+    {
+        name: "たぬき",
+        emoji: "🦝",
+        type: "愛され上手タイプ",
+        personality: "人懐っこく、誰とでもすぐに仲良くなれます。楽天的で、困難もポジティブに乗り越えます。",
+        characteristics: "サービス精神が旺盛で、人を楽しませるのが得意。要領が良く、世渡り上手。愛嬌があり、周囲から可愛がられます。",
+        compatibility: "ライオン、ゾウ",
+        advice: "時には真剣に物事に取り組む姿勢も必要です。お調子者だけでは信頼を失うこともあるので、誠実さも大切にしましょう。"
+    },
+    {
+        name: "黒ひょう",
+        emoji: "🐆",
+        type: "ミステリアスタイプ",
+        personality: "神秘的な雰囲気を持ち、独特の魅力があります。冷静沈着で、感情をあまり表に出しません。",
+        characteristics: "観察力に優れ、状況を客観的に分析できます。秘密主義で、本心を見せることは稀。集中力が高く、目標達成能力があります。",
+        compatibility: "ペガサス、狼",
+        advice: "もう少し心を開いてみましょう。信頼できる人には本当の自分を見せることで、より深い人間関係が築けます。"
+    },
+    {
+        name: "ひつじ",
+        emoji: "🐑",
+        type: "穏やか平和主義タイプ",
+        personality: "温厚で協調性があり、グループの調和を大切にします。争いを避け、平和的な解決を好みます。",
+        characteristics: "従順で真面目、コツコツと努力を重ねます。周囲に合わせることが得意で、チームワークを重視します。優しく包容力があります。",
+        compatibility: "ゾウ、こじか",
+        advice: "時には自分の意見を主張することも大切です。協調性は素晴らしいですが、自己主張も成長には必要です。"
+    },
+    {
+        name: "コアラ",
+        emoji: "🐨",
+        type: "マイペースタイプ",
+        personality: "のんびり屋で、自分のペースを大切にします。ストレスを感じにくく、リラックスした雰囲気を持っています。",
+        characteristics: "穏やかで争いを好まず、平和を愛します。焦らず慌てず、着実に物事を進めます。癒し系で、一緒にいると安らぎを感じます。",
+        compatibility: "ひつじ、こじか",
+        advice: "時には積極的に行動することも必要です。マイペース過ぎると機会を逃すこともあるので、バランスを意識しましょう。"
+    }
+];
+
+// 生年月日から動物を決定する関数
+function calculateAnimal(year, month, day) {
+    // 簡易的な計算方法（実際の動物占いとは異なる独自ロジック）
+    const total = year + month * 100 + day * 10;
+    const index = total % animals.length;
+    return animals[index];
+}
+
+// フォーム送信イベント
+document.getElementById('fortuneForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const year = parseInt(document.getElementById('year').value);
+    const month = parseInt(document.getElementById('month').value);
+    const day = parseInt(document.getElementById('day').value);
+    
+    // 入力値の検証
+    if (!year || !month || !day) {
+        alert('すべての項目を入力してください');
+        return;
+    }
+    
+    if (month < 1 || month > 12) {
+        alert('月は1から12の間で入力してください');
+        return;
+    }
+    
+    if (day < 1 || day > 31) {
+        alert('日は1から31の間で入力してください');
+        return;
+    }
+    
+    // 動物を決定
+    const animal = calculateAnimal(year, month, day);
+    
+    // 結果を表示
+    displayResult(animal);
+    
+    // 結果セクションまでスクロール
+    setTimeout(() => {
+        document.getElementById('result').scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+        });
+    }, 100);
+});
+
+// 結果を表示する関数
+function displayResult(animal) {
+    document.getElementById('animalEmoji').textContent = animal.emoji;
+    document.getElementById('animalName').textContent = animal.name;
+    document.getElementById('animalType').textContent = animal.type;
+    document.getElementById('personality').textContent = animal.personality;
+    document.getElementById('characteristics').textContent = animal.characteristics;
+    document.getElementById('compatibility').textContent = animal.compatibility;
+    document.getElementById('advice').textContent = animal.advice;
+    
+    // 入力カードを非表示、結果カードを表示
+    document.querySelector('.input-card').style.display = 'none';
+    document.getElementById('result').classList.remove('hidden');
+}
+
+// リセット関数
+function resetForm() {
+    document.getElementById('fortuneForm').reset();
+    document.querySelector('.input-card').style.display = 'block';
+    document.getElementById('result').classList.add('hidden');
+    
+    // ページトップまでスクロール
+    window.scrollTo({ 
+        top: 0, 
+        behavior: 'smooth' 
+    });
+}
