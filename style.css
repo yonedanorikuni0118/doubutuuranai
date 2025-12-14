@@ -1,0 +1,326 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px;
+    text-align: center;
+}
+
+.header-icon {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.header h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+.progress-bar {
+    height: 6px;
+    background: #e0e0e0;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    transition: width 0.3s ease;
+}
+
+.content {
+    padding: 50px 40px;
+}
+
+.question-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    font-size: 14px;
+    color: #666;
+}
+
+.progress-text {
+    color: #667eea;
+    font-weight: 600;
+}
+
+.question {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 40px;
+    line-height: 1.5;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.option-btn {
+    padding: 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    background: white;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+}
+
+.option-btn:hover {
+    border-color: #667eea;
+    background: #f8f9ff;
+}
+
+.option-btn.selected {
+    border-color: #667eea;
+    background: #f8f9ff;
+    color: #667eea;
+}
+
+.navigation {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.nav-btn {
+    flex: 1;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.back-btn {
+    background: #f0f0f0;
+    color: #666;
+}
+
+.back-btn:hover {
+    background: #e0e0e0;
+}
+
+.next-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.next-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.finish-btn {
+    background: linear-gradient(135deg, #56ab2f 0%, #a8e063 100%);
+    color: white;
+}
+
+.finish-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(86, 171, 47, 0.4);
+}
+
+.result-container {
+    text-align: center;
+}
+
+.mbti-badge {
+    display: inline-block;
+    font-size: 60px;
+    font-weight: bold;
+    color: white;
+    padding: 30px 50px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+
+.result-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.result-description {
+    font-size: 20px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.traits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.trait-card {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 4px solid #667eea;
+    font-weight: 600;
+    color: #333;
+}
+
+.type-explanation {
+    background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.type-explanation h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.type-detail {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.type-detail strong {
+    color: #333;
+}
+
+.restart-btn {
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.restart-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+}
+
+.footer {
+    text-align: center;
+    color: white;
+    margin-top: 30px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.hidden {
+    display: none;
+}
+
+/* カラースキーム */
+.purple { 
+    background: linear-gradient(135deg, #a855f7 0%, #9333ea 100%); 
+}
+
+.teal { 
+    background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%); 
+}
+
+.blue { 
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); 
+}
+
+.amber { 
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); 
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    .content {
+        padding: 30px 20px;
+    }
+
+    .question {
+        font-size: 20px;
+    }
+
+    .header h1 {
+        font-size: 24px;
+    }
+
+    .traits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mbti-badge {
+        font-size: 48px;
+        padding: 20px 40px;
+    }
+
+    .result-title {
+        font-size: 28px;
+    }
+
+    .result-description {
+        font-size: 18px;
+    }
+}
